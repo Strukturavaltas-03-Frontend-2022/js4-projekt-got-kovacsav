@@ -1,18 +1,4 @@
-/*
-{
-  "name": "Jon Snow",
-  "portrait": "assets/jon.png",
-  "picture": "assets/pictures/jon_snow.jpg",
-  "bio":"Jon is the bastard child of Ned Stark of Winterfell and a unkwnow woman. Soon after his marriage, Ned Stark leaved his home to go to fight on the war of the usurper, and returned home carrying a infant that was supposedly his own",
-  "organization": "nightwatch"
-  },
-  { "name":"Ned Stark",
-    "portrait": "assets/ned.png",
-    "picture": "assets/pictures/ned_stark.jpg",
-    "bio":"Eddard 'Ned' Stark is the head of House Stark, Lord of Winterfell, and Warden of the North. He is a friend to King Robert Baratheon, whom he was raised with and helped to win the Iron Throne, and is eventually named his Hand. ",
-    "house": "stark"
-  }
-  */
+let characters;
 
 const getCharacters = () => {
   return fetch("../json/got.json").then((data) => data.json());
@@ -23,10 +9,21 @@ const filterAliveCharacters = (array) => {
   return array;
 };
 
-// itt még a családnév alapján kellene rendezni
+// megfordítja a neveket családnév - keresztnév sorrendbe
+const turnNameOrder = (string) => {
+  const firstName = string.split(" ")[0];
+  const lastName = string.split(" ")[1];
+  return (string = lastName ? `${lastName} ${firstName}` : `${firstName}`);
+};
+
+// rendezés
 const sortCharacters = (array) => {
   array = array.sort((a, b) =>
-    a.name > b.name ? 1 : b.name > a.name ? -1 : 0
+    turnNameOrder(a.name) > turnNameOrder(b.name)
+      ? 1
+      : turnNameOrder(b.name) > turnNameOrder(a.name)
+      ? -1
+      : 0
   );
   return array;
 };
@@ -44,6 +41,19 @@ const selectCharacter = (object) => {
   }
   //document.querySelector(".selected__house").alt = object.name;
   document.querySelector(".selected__description").textContent = object.bio;
+};
+
+const emptySelectedCharacterDiv = () => {
+  document.querySelector(".selected__image").src = "";
+  document.querySelector(".selected__image").alt = "";
+  document.querySelector(".selected__name").textContent = "";
+  document.querySelector(".selected__house").src = "";
+  document.querySelector(".selected__description").textContent = "";
+};
+
+const setCharacterNotFound = () => {
+  emptySelectedCharacterDiv();
+  document.querySelector(".selected__name").textContent = "Character not found";
 };
 
 const setDOM = (array) => {
@@ -64,13 +74,52 @@ const setDOM = (array) => {
   });
 };
 
+// Beviteli mező törlése
+const clearInputField = () => {
+  document.querySelector(".search__input").value = "";
+};
+
+const searchCharacter = () => {
+  let input = document.querySelector(".search__input").value;
+  let selectedCharacter = characters.filter(
+    (item) => ("" + item.name).toLowerCase() == ("" + input).toLowerCase()
+  );
+  console.log(selectedCharacter);
+  if (selectedCharacter.length > 0) {
+    selectCharacter(selectedCharacter[0]);
+    clearInputField();
+  } else {
+    clearInputField();
+    setCharacterNotFound();
+  }
+};
+
+const setSearchIcon = () => {
+  document
+    .querySelector(".search__icon")
+    .addEventListener("click", () => searchCharacter());
+};
+
+const setEnterInSearchField = () => {
+  document
+    .querySelector(".search__input")
+    .addEventListener("keypress", (event) => {
+      if (event.key == "Enter") {
+        searchCharacter();
+      }
+    });
+};
+
 async function main() {
   try {
-    let characters = await getCharacters();
+    characters = await getCharacters();
     characters = filterAliveCharacters(characters);
     characters = sortCharacters(characters);
-    console.log(characters);
+    //console.log(characters);
     setDOM(characters);
+    clearInputField();
+    setSearchIcon();
+    setEnterInSearchField();
   } catch {
     console.error("Hiba");
   }
