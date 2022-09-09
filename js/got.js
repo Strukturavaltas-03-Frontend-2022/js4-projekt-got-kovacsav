@@ -28,7 +28,22 @@ const sortCharacters = (array) => {
   return array;
 };
 
+// a karakter kiválasztásánál szükség van egy egyedi azonosítóra a character div-ben
+// class-szal nehéz, mert az nem lehet akármilyen string
+// így adjunk rá egy title attribútumot, aminek már lehet a name a value-ja
+// így egyszerűen rá lehet keresni a kiválasztott karakterre és ráadni a highlight
+// classt, a css selector kicsit trükkös
+const setTitle = (titleValue) => {
+  document
+    .querySelectorAll(".character")
+    .forEach((item) => item.classList.remove("selectedCharacter__highlight"));
+  document
+    .querySelector(`div[title='${titleValue}']`)
+    .classList.add("selectedCharacter__highlight");
+};
+
 const selectCharacter = (object) => {
+  setTitle(object.name);
   document.querySelector(".selected__image").src = `../${object.picture}`;
   document.querySelector(".selected__image").alt = object.name;
   document.querySelector(".selected__name").textContent = object.name;
@@ -37,7 +52,8 @@ const selectCharacter = (object) => {
       ".selected__house"
     ).src = `../assets/houses/${object.house}.png`;
   } else {
-    document.querySelector(".selected__house").src = "";
+    document.querySelector(".selected__house").src =
+      "../assets/houses/icon0.png";
   }
   //document.querySelector(".selected__house").alt = object.name;
   document.querySelector(".selected__description").textContent = object.bio;
@@ -62,6 +78,7 @@ const setDOM = (array) => {
     const charatcertDiv = document.createElement("div");
     characterContainer.appendChild(charatcertDiv);
     charatcertDiv.classList.add("character");
+    charatcertDiv.setAttribute("title", `${element.name}`);
     const image = document.createElement("img");
     charatcertDiv.appendChild(image);
     image.src = `../${element.portrait}`;
@@ -84,7 +101,6 @@ const searchCharacter = () => {
   let selectedCharacter = characters.filter(
     (item) => ("" + item.name).toLowerCase() == ("" + input).toLowerCase()
   );
-  console.log(selectedCharacter);
   if (selectedCharacter.length > 0) {
     selectCharacter(selectedCharacter[0]);
     clearInputField();
@@ -96,15 +112,15 @@ const searchCharacter = () => {
 
 const setSearchIcon = () => {
   document
-    .querySelector(".search__icon")
+    .querySelector(".search__button")
     .addEventListener("click", () => searchCharacter());
 };
 
 const setEnterInSearchField = () => {
   document
     .querySelector(".search__input")
-    .addEventListener("keypress", (event) => {
-      if (event.key == "Enter") {
+    .addEventListener("keyup", (event) => {
+      if (event.key === "Enter") {
         searchCharacter();
       }
     });
@@ -115,7 +131,6 @@ async function main() {
     characters = await getCharacters();
     characters = filterAliveCharacters(characters);
     characters = sortCharacters(characters);
-    //console.log(characters);
     setDOM(characters);
     clearInputField();
     setSearchIcon();

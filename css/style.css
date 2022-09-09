@@ -26,16 +26,14 @@ section {
 .character {
   text-align: center;
   justify-content: center;
-  width: 110px;
-  /* border: solid 2px black; */
-  padding-top: 1%;
-  padding-bottom: 1%;
+  width: 80px;
+  padding: 1%;
 }
 
-.character:hover {
-  cursor: pointer;
-  background-color:white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+.character:hover, .selectedCharacter__highlight {
+  background-color:rgb(213, 213, 213);
+  border-radius: 5%;
+  box-shadow: 0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 10px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .character > img {
@@ -46,6 +44,11 @@ section {
 .name {
   padding: 1%;
   margin: 1%;
+}
+.name:hover {
+  cursor: pointer;
+  font-style: oblique;
+  color:rgb(4, 68, 123);
 }
 
 aside {
@@ -111,7 +114,7 @@ aside>h1 {
   width: 100%;
 }
 
-.next {
+.search__button {
   position: relative;
   left: 5%;
   font-size: 1.2rem;
@@ -122,7 +125,7 @@ aside>h1 {
   border: solid 1px white;
 }
 
-.next:hover {
+.search__button:hover {
   cursor: pointer;
 }
 
@@ -135,17 +138,6 @@ aside>h1 {
   background-color: white;
 }
 
-.search__icon {
-  font-size: 1.5rem;
-  margin: 0;
-  padding-left: 2%;
-  position: relative;
-  left: 0%;
-}
-
-.search__icon:hover {
-  cursor: pointer;
-}
 .search__input {
   position: relative;
   left: 0%;

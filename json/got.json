@@ -1,14 +1,16 @@
 [
-  { "name":"Jon Snow",
+  {
+    "name": "Jon Snow",
     "portrait": "assets/jon.png",
     "picture": "assets/pictures/jon_snow.jpg",
-    "bio":"Jon is the bastard child of Ned Stark of Winterfell and a unkwnow woman. Soon after his marriage, Ned Stark leaved his home to go to fight on the war of the usurper, and returned home carrying a infant that was supposedly his own",
+    "bio": "Jon is the bastard child of Ned Stark of Winterfell and a unkwnow woman. Soon after his marriage, Ned Stark leaved his home to go to fight on the war of the usurper, and returned home carrying a infant that was supposedly his own",
     "organization": "nightwatch"
   },
-  { "name":"Ned Stark",
+  {
+    "name": "Ned Stark",
     "portrait": "assets/ned.png",
     "picture": "assets/pictures/ned_stark.jpg",
-    "bio":"Eddard 'Ned' Stark is the head of House Stark, Lord of Winterfell, and Warden of the North. He is a friend to King Robert Baratheon, whom he was raised with and helped to win the Iron Throne, and is eventually named his Hand. ",
+    "bio": "Eddard 'Ned' Stark is the head of House Stark, Lord of Winterfell, and Warden of the North. He is a friend to King Robert Baratheon, whom he was raised with and helped to win the Iron Throne, and is eventually named his Hand. ",
     "house": "stark"
   },
   {
@@ -29,21 +31,21 @@
     "name": "Robb Stark",
     "portrait": "assets/robb.png",
     "picture": "assets/pictures/robb_stark.jpg",
-    "bio":"Robb Stark is the eldest son of Eddard Stark and Catelyn Tully and the heir to Winterfell and the North.",
+    "bio": "Robb Stark is the eldest son of Eddard Stark and Catelyn Tully and the heir to Winterfell and the North.",
     "house": "stark"
   },
   {
     "name": "Bran Stark",
-    "portrait":"assets/bran.png",
+    "portrait": "assets/bran.png",
     "picture": "assets/pictures/bran_stark.jpg",
-    "bio":"Eddard and Catelyn's second son.  Bran was educated by Maester Luwin and trained with weapons; he seemed destined to be an excellent fighter.",
+    "bio": "Eddard and Catelyn's second son.  Bran was educated by Maester Luwin and trained with weapons; he seemed destined to be an excellent fighter.",
     "house": "stark"
   },
   {
     "name": "Rickon Stark",
     "portrait": "assets/rickon.png",
     "picture": "assets/pictures/rickon_stark.jpg",
-    "bio":"Rickon Stark is Eddard and Catelyn's youngest child, only three years old when the series begins. Rickon is a naturally aggressive and strong-willed child, but his youth makes it difficult for him to cope with the terrible changes that come to his family and life. ",
+    "bio": "Rickon Stark is Eddard and Catelyn's youngest child, only three years old when the series begins. Rickon is a naturally aggressive and strong-willed child, but his youth makes it difficult for him to cope with the terrible changes that come to his family and life. ",
     "house": "stark"
   },
   {
@@ -101,26 +103,26 @@
     "name": "Joffrey Baratheon",
     "portrait": "assets/joffrey.png",
     "picture": "assets/pictures/joffrey_baratheon.jpg",
-    "bio":"Joffrey Baratheon is the eldest son and heir of King Robert Baratheon and Queen Cersei Lannister. He strong-willed as a child and has an uncontrollable temper not unlike his mother's and an unchecked sadistic streak",
+    "bio": "Joffrey Baratheon is the eldest son and heir of King Robert Baratheon and Queen Cersei Lannister. He strong-willed as a child and has an uncontrollable temper not unlike his mother's and an unchecked sadistic streak",
     "house": "baratheon"
   },
   {
     "name": "Tommen Baratheon",
     "portrait": "assets/tommen.png",
     "picture": "assets/pictures/tommen_baratheon.jpg",
-    "bio":"The youngest child of King Robert I and Queen Cersei Lannister.",
+    "bio": "The youngest child of King Robert I and Queen Cersei Lannister.",
     "house": "baratheon"
   },
   {
     "name": "Myrcella Baratheon",
     "portrait": "assets/myrcella.png",
     "picture": "assets/pictures/myrcella_baratheon.jpg",
-    "bio":"Princess Myrcella Baratheon is the second oldest of the royal Baratheon children. ",
+    "bio": "Princess Myrcella Baratheon is the second oldest of the royal Baratheon children. ",
     "house": "lannister"
   },
   {
     "name": "Petyr Baelish",
-    "portrait":"assets/petyr.png",
+    "portrait": "assets/petyr.png",
     "picture": "assets/pictures/petyr_baelish.jpg",
     "alias": "littlefinger",
     "bio": "Lord Petyr Baelish, sometimes called Littlefinger, was Master of Coin (or treasurer) on the King's Small Council. He was born to a small and insignificant house, spending most of his adult life trying to rise above his lowly birthright and become something greater, craving for power and status. He possesses considerable skill in commerce and coin, and is a master of court intrigue, his brilliance matched only by his ambition and his gift for political improvisation."
@@ -129,7 +131,7 @@
     "name": "Varys",
     "portrait": "assets/varys.png",
     "picture": "assets/pictures/varys.jpg",
-    "bio":"Called 'the Spider', is the enigmatic member of the small council and Master of Whisperers, or spymaster, for the Iron Throne of the Seven Kingdoms. An eunuch since his infancy, his history of providing information to all sides, of aiding enemies, of pitting rivals against one another, and of manipulation to achieve his ends has earned him a reputation of being distasteful and untrustworthy amongst the nobles at court"
+    "bio": "Called 'the Spider', is the enigmatic member of the small council and Master of Whisperers, or spymaster, for the Iron Throne of the Seven Kingdoms. An eunuch since his infancy, his history of providing information to all sides, of aiding enemies, of pitting rivals against one another, and of manipulation to achieve his ends has earned him a reputation of being distasteful and untrustworthy amongst the nobles at court"
   },
   {
     "name": "Daenerys Targaryen",
@@ -154,7 +156,7 @@
   },
   {
     "name": "Benjen Stark",
-    "portrait":"assets/benjen.png",
+    "portrait": "assets/benjen.png",
     "picture": "assets/pictures/benjen_stark.jpg",
     "house": "stark",
     "organization": "nightwatch",
@@ -162,6 +164,7 @@
   },
   {
     "name": "Aemon Targaryen",
+    "dead": true,
     "portrait": "assets/aemon.png",
     "picture": "assets/pictures/aemon_targaryen.jpg",
     "house": "targaryen",
@@ -199,7 +202,7 @@
     "name": "Hodor",
     "portrait": "assets/hodor.png",
     "picture": "assets/pictures/hodor.jpg",
-    "bio":  "Hodor, hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor. Hodor, hodor hodor hodor hodor hodor. Hodor hodor, hodor hodor hodor hodor, hodor hodor hodor. "
+    "bio": "Hodor, hodor hodor hodor hodor. Hodor hodor hodor, hodor hodor hodor. Hodor, hodor hodor hodor hodor hodor. Hodor hodor, hodor hodor hodor hodor, hodor hodor hodor. "
   },
   {
     "name": "Maester Luwin",
@@ -244,7 +247,7 @@
   },
   {
     "name": "Shae",
-    "portrait":"assets/shae.png",
+    "portrait": "assets/shae.png",
     "picture": "assets/pictures/shae.jpg",
     "bio": ""
   },
@@ -265,7 +268,7 @@
     "name": "Gendry",
     "portrait": "assets/gendry.png",
     "picture": "assets/pictures/gendry.jpg",
-    "bio":"He is a bastard of Robert Baratheon, who doesn't know who his father really is. He was raised by a blacksmith, who teached him his proffesion."
+    "bio": "He is a bastard of Robert Baratheon, who doesn't know who his father really is. He was raised by a blacksmith, who teached him his proffesion."
   },
   {
     "name": "Loras Tyrell",
@@ -283,13 +286,13 @@
     "name": "Osha",
     "portrait": "assets/osha.png",
     "picture": "assets/pictures/osha.jpg",
-    "bio":"Osha is one of the Free Folk, who becomes a captive of Winterfell and later a servant of House Stark."
+    "bio": "Osha is one of the Free Folk, who becomes a captive of Winterfell and later a servant of House Stark."
   },
   {
     "name": "Jeor Mormont",
     "portrait": "assets/jeor.png",
     "picture": "assets/pictures/jeor_mormont.jpg",
-    "bio":"Lord Commander Jeor Mormont, also known as the Old Bear, is the 997th Lord Commander of the Night's Watch, which he commands from his headquarters, the fortress of Castle Black. Jeor, previously head of House Mormont and Lord of Bear Island, abdicated his seat in favor of his son, Ser Jorah Mormont, and joined the Night's Watch",
+    "bio": "Lord Commander Jeor Mormont, also known as the Old Bear, is the 997th Lord Commander of the Night's Watch, which he commands from his headquarters, the fortress of Castle Black. Jeor, previously head of House Mormont and Lord of Bear Island, abdicated his seat in favor of his son, Ser Jorah Mormont, and joined the Night's Watch",
     "house": "mormont",
     "organization": "nightwatch"
   },
@@ -310,7 +313,7 @@
     "name": "Melisandre",
     "portrait": "assets/melissandre.png",
     "picture": "assets/pictures/melissandre.jpg",
-    "bio":"Melisandre is a priestess of the god R'hllor,  hailing from the eastern city of Asshai. She has joined the entourage of Stannis Baratheon, believing him to be Azor Ahai reborn, a hero destined to defeat the Great Other. She has become an influential advisor to him and his family. "
+    "bio": "Melisandre is a priestess of the god R'hllor,  hailing from the eastern city of Asshai. She has joined the entourage of Stannis Baratheon, believing him to be Azor Ahai reborn, a hero destined to defeat the Great Other. She has become an influential advisor to him and his family. "
   },
   {
     "name": "Margaery Tyrell",
@@ -334,7 +337,7 @@
     "name": "Ygritte",
     "portrait": "assets/ygritte.png",
     "picture": "assets/pictures/ygritte.jpg",
-    "bio":"Ygritte is nineteen years old wildling warrior. Her most distinctive feature is her fiery red hair. The wildlings consider red hair to be lucky and describe those with it as having been 'kissed by fire'."
+    "bio": "Ygritte is nineteen years old wildling warrior. Her most distinctive feature is her fiery red hair. The wildlings consider red hair to be lucky and describe those with it as having been 'kissed by fire'."
   },
   {
     "name": "Roose Bolton",
@@ -342,5 +345,4 @@
     "picture": "assets/pictures/roose_bolton.jpg",
     "bio": "Roose Bolton is the head of House Bolton and Lord of the Dreadfort. Though mild-mannered, he is cold, calculating, and capable of great cruelty. He speaks softly, never raising his voice, forcing those who listen to do so intently.[2] He receives regular leechings, which he believes to improve his health."
   }
-
 ]
