@@ -1,9 +1,11 @@
 let characters;
 
+// kérjük le az összes karaktert
 const getCharacters = () => {
   return fetch("../json/got.json").then((data) => data.json());
 };
 
+// nekünk csak az élők kellenek
 const filterAliveCharacters = (array) => {
   array = array.filter((item) => !item.hasOwnProperty("dead"));
   return array;
@@ -16,7 +18,7 @@ const turnNameOrder = (string) => {
   return (string = lastName ? `${lastName} ${firstName}` : `${firstName}`);
 };
 
-// rendezés
+// rendezés családnév szerint
 const sortCharacters = (array) => {
   array = array.sort((a, b) =>
     turnNameOrder(a.name) > turnNameOrder(b.name)
@@ -29,10 +31,12 @@ const sortCharacters = (array) => {
 };
 
 // a karakter kiválasztásánál szükség van egy egyedi azonosítóra a character div-ben
-// class-szal nehéz, mert az nem lehet akármilyen string
-// így adjunk rá egy title attribútumot, aminek már lehet a name a value-ja
+// class-szal ez nehéz, mert az nem lehet akármilyen string
+// így adjunk rá egy title attribútumot, aminek már lehet a name a value-ja, ami elég egyedi
 // így egyszerűen rá lehet keresni a kiválasztott karakterre és ráadni a highlight
 // classt, a css selector kicsit trükkös
+// először le kell szedni az összes elemről az esetlegsen korábbi kiválasztásnál
+// ráadott classt
 const setTitle = (titleValue) => {
   document
     .querySelectorAll(".character")
@@ -42,6 +46,7 @@ const setTitle = (titleValue) => {
     .classList.add("selectedCharacter__highlight");
 };
 
+// a kiválasztott karakter beállításai
 const selectCharacter = (object) => {
   setTitle(object.name);
   document.querySelector(".selected__image").src = `../${object.picture}`;
@@ -55,10 +60,10 @@ const selectCharacter = (object) => {
     document.querySelector(".selected__house").src =
       "../assets/houses/icon0.png";
   }
-  //document.querySelector(".selected__house").alt = object.name;
   document.querySelector(".selected__description").textContent = object.bio;
 };
 
+// a kiválasztott karakter mezőinek kiürítése
 const emptySelectedCharacterDiv = () => {
   document.querySelector(".selected__image").src = "";
   document.querySelector(".selected__image").alt = "";
@@ -67,11 +72,13 @@ const emptySelectedCharacterDiv = () => {
   document.querySelector(".selected__description").textContent = "";
 };
 
+// ha nincs a keresésnek megfelelő karakter
 const setCharacterNotFound = () => {
   emptySelectedCharacterDiv();
   document.querySelector(".selected__name").textContent = "Character not found";
 };
 
+// az oldal feltöltése az élő karakterekkel
 const setDOM = (array) => {
   array.forEach((element) => {
     const characterContainer = document.querySelector(".character__container");
@@ -96,6 +103,7 @@ const clearInputField = () => {
   document.querySelector(".search__input").value = "";
 };
 
+// karakter keresés
 const searchCharacter = () => {
   let input = document.querySelector(".search__input").value;
   let selectedCharacter = characters.filter(
@@ -110,12 +118,14 @@ const searchCharacter = () => {
   }
 };
 
+// kereső gomb
 const setSearchIcon = () => {
   document
     .querySelector(".search__button")
     .addEventListener("click", () => searchCharacter());
 };
 
+// a keresőmező az enter fölengedésére indul
 const setEnterInSearchField = () => {
   document
     .querySelector(".search__input")
