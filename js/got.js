@@ -32,10 +32,10 @@ const sortCharacters = (array) => {
 
 // a karakter kiválasztásánál szükség van egy egyedi azonosítóra a character div-ben
 // class-szal ez nehéz, mert az nem lehet akármilyen string
-// így adjunk rá egy title attribútumot, aminek már lehet a name a value-ja, ami elég egyedi
+// így adunk rá egy title attribútumot, aminek már lehet a name a value-ja, ami elég egyedi
 // így egyszerűen rá lehet keresni a kiválasztott karakterre és ráadni a highlight
 // classt, a css selector kicsit trükkös
-// először le kell szedni az összes elemről az esetlegsen korábbi kiválasztásnál
+// először le kell szedni az összes elemről az esetlegesen korábbi kiválasztásnál
 // ráadott classt
 const setTitle = (titleValue) => {
   document
@@ -75,6 +75,8 @@ const emptySelectedCharacterDiv = () => {
 // ha nincs a keresésnek megfelelő karakter
 const setCharacterNotFound = () => {
   emptySelectedCharacterDiv();
+  document.querySelector(".selected__image").src = "./assets/pictures/got.jpg";
+  document.querySelector(".selected__image").alt = "base";
   document.querySelector(".selected__name").textContent = "Character not found";
 };
 
